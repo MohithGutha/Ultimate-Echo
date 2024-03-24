@@ -12,7 +12,8 @@ const UserImage = ({ image, size = "60px" }) => {
         height={size}
         alt="user"
         // src={`http://localhost:3001/assets/${image}`}
-        src={`${process.env.REACT_APP_BASE_URL}/assets/${image}`}
+        // src={`${process.env.REACT_APP_BASE_URL}/assets/${image}`}
+        src={`${process.env.REACT_APP_VERCEL_URL}/assets/${image}`}
       />
     </Box>
   );

@@ -56,7 +56,8 @@ const AddPostWidget = ({ picturePath }) => {
       //   headers: { Authorization: `Bearer ${token}` },
       // });
       // const {data} = await axios.post(`http://localhost:3001/posts`, formData, {
-      const {data} = await axios.post(`${process.env.REACT_APP_BASE_URL}/posts`, formData, {
+      // const {data} = await axios.post(`${process.env.REACT_APP_BASE_URL}/posts`, formData, {
+      const {data} = await axios.post(`${process.env.REACT_APP_VERCEL_URL}/posts`, formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log(data)

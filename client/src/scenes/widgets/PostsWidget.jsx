@@ -21,7 +21,8 @@ const PostsWidget = ({ userID, isProfile = false }) => {
       // });
 
       // const {data} = await axios.get("http://localhost:3001/posts", {
-      const {data} = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts`, {
+      // const {data} = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts`, {
+      const {data} = await axios.get(`${process.env.REACT_APP_VERCEL_URL}/posts`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       // console.log("Response in getPosts in PostsWidget.jsx: ", data);
@@ -48,7 +49,8 @@ const PostsWidget = ({ userID, isProfile = false }) => {
       //   headers: { Authorization: `Bearer ${token}` },
       // });
       // const {data} = await axios.get(`http://localhost:3001/posts/${userID}/posts`, {
-      const {data} = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts/${userID}/posts`, {
+      // const {data} = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts/${userID}/posts`, {
+      const {data} = await axios.get(`${process.env.REACT_APP_VERCEL_URL}/posts/${userID}/posts`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       // const data = await response.json();

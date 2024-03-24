@@ -30,7 +30,8 @@ const Friend = ({ friendID, name, subtitle, userPicturePath }) => {
     try {
       const response = await axios.patch(
         // `http://localhost:3001/users/${_id}/${friendID}`
-        `${process.env.REACT_APP_BASE_URL}/users/${_id}/${friendID}`,
+        // `${process.env.REACT_APP_BASE_URL}/users/${_id}/${friendID}`,
+        `${process.env.REACT_APP_VERCEL_URL}/users/${_id}/${friendID}`,
         {},
         {
           headers: {
