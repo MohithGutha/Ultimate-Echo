@@ -71,7 +71,7 @@ app.post("/posts", verifyToken, upload.single("picture"), createPost); // Create
 
 
 /* MONGOOSE SETUP */
-const PORT = process.env.SERVER_PORT || 4001;
+const PORT = process.env.PORT || 4001;
 mongoose
     .connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
