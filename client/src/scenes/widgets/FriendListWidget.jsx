@@ -18,7 +18,8 @@ const FriendListWidget = ({ userID }) => {
 
   const getFriends = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/users/${userID}/friends`, {
+      // const response = await axios.get(`http://localhost:3001/users/${userID}/friends`, {
+      const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/users/${userID}/friends`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       dispatch(setFriends({ friends: response.data }));

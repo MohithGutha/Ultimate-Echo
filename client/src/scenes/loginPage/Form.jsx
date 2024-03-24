@@ -72,7 +72,8 @@ const Form = () => {
     // const UserResponse = await axios.post("http://localhost:3001/auth/register", formData);
 
     try{
-      const savedUserResponse = await axios.post("http://localhost:3001/auth/register", formData);
+      const savedUserResponse = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/register`, formData);
+      // const savedUserResponse = await axios.post("http://localhost:3001/auth/register", formData);
       // const savedUserResponse = await fetch(
       //   "http://localhost:3001/auth/register",
       //   {
@@ -110,7 +111,8 @@ const Form = () => {
   const login = async (values, onSubmitProps) => {
 
     try {
-      const loggedInResponse = await axios.post("http://localhost:3001/auth/login", values);
+      // const loggedInResponse = await axios.post("http://localhost:3001/auth/login", values);
+      const loggedInResponse = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/login`, values);
       const loggedIn = loggedInResponse.data;
       onSubmitProps.resetForm();
       if (loggedIn) {
