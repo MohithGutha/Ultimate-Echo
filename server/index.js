@@ -42,7 +42,10 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors()); /// Invoke cross origin resource sharing to allow the frontend to access the backend
+let corsOptions = {
+  origin: ["http://localhost:3000", "https://ultimate-echo.vercel.app"],
+};
+app.use(cors(corsOptions)); /// Invoke cross origin resource sharing to allow the frontend to access the backend
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 
